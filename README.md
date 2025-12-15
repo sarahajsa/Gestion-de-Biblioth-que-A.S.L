@@ -1,32 +1,33 @@
 # Nom du Projet (ex: MyManager - Gestion Hospitalière)
 
 <!-- Mettez un court slogan ou une description en une phrase ici -->
-> Application Backoffice de gestion réalisée dans le cadre du module Dévelopement web.
+> Application Backoffice de Gestion de Bibliothque réalisée dans le cadre du module Dévelopement web.
 
 ## 🔗 Liens Importants
 
 <!-- REMPLACEZ LES LIENS CI-DESSOUS -->
-- **APPLICATION DÉPLOYÉE (Live Demo) :** [CLIQUEZ ICI POUR VOIR LE SITE](https://)
-- **Repository GitHub :** [Lien vers ce repo](https://)
+- **APPLICATION DÉPLOYÉE (Live Demo) :** [CLIQUEZ ICI POUR VOIR LE SITE]()
+- **Repository GitHub :** [Lien vers ce repo](https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L)
 
 ---
 
 ## 👥 Membres de l'Équipe
 
-**Nom du Groupe :** [Insérer le nom du groupe ici]
+**Nom du Groupe :** [A.S.L
 
-| Prénom & Nom | Rôle / Tâches principales | Lien Github |
-|--------------|---------------------------|-------------|
-| Étudiant 1   | (ex: Dashboard, ChartJS)  | [@pseudo](https://github.com/pseudo) |
-| Étudiant 2   | (ex: CRUD Utilisateurs)   | [@pseudo](https://github.com/pseudo) |
-| Étudiant 3   | (ex: CSS, Responsive)     | [@pseudo](https://github.com/pseudo) |
+| Prénom & Nom     | Rôle / Tâches principales | Lien Github                                          |
+|------------------|---------------------------|------------------------------------------------------|
+| Sarah Ajdi       | (ex: Dashboard, ChartJS)  | [@sarahajsa](https://github.com/sarahajsa)           |
+| Safae Sadki      | (ex: CRUD Utilisateurs)   | [@safaesad](https://github.com/safaesad)             |     
+|Yousra Laghrabi   | (ex: CSS, Responsive)     | [@yousralaghrabi](https://github.com/yousralaghrabi) |
 
 ---
 
 ## 📝 Thème Choisi
 <!-- Indiquez le thème choisi parmi la liste ou votre sujet personnalisé -->
-*   **Thème :** (ex: Gestion de Bibliothèque / Gestion Immobilière / Custom...)
-*   **Description :** Une brève explication du but de l'application.
+*   **Thème :** Gestion de Bibliothèque  
+*   **Description :** Application backoffice permettant de gérer une bibliothèque à travers plusieurs entités (livres, auteurs, adhérents, catégories et emprunts).  
+  L’application offre des fonctionnalités CRUD complètes, des tableaux avec recherche, filtres, tri, pagination et export, ainsi qu’un tableau de bord présentant des statistiques via des graphiques interactifs.
 
 ---
 
@@ -34,21 +35,30 @@
 <!-- Cochez les cases [x] pour les fonctionnalités terminées. Laissez [ ] pour ce qui n'est pas fait. -->
 
 ### Fonctionnalités Principales
-- [ ] **CRUD 1 :** [Nom Entité, ex: Utilisateurs] (Create, Read, Update, Delete)
-- [ ] **CRUD 2 :** [Nom Entité]
-- [ ] **CRUD 3 :** [Nom Entité]
-- [ ] **CRUD 4 :** [Nom Entité]
-- [ ] **CRUD 5 :** [Nom Entité]
-- [ ] **Recherche & Filtres** dans les tableaux
+- [ ] **CRUD 1 :** Livres (Create, Read, Update, Delete)
+- [ ] **CRUD 2 :** Auteurs
+- [ ] **CRUD 3 :** Adhérents
+- [ ] **CRUD 4 :** Emprunts
+- [ ] **CRUD 5 :** Catégories
+- [ ] **Recherche et filtres dans les tableaux**
+- [ ] **Tri (Sorting)**
 - [ ] **Pagination**
+- [ ] **Export CSV**
+- [ ] **Page "See Details" avec export PDF**
+- [ ] **Suppression avec confirmation (popup)**
 
 ### Dashboard & Data
-- [ ] **KPIs :** Cartes avec chiffres clés (Total utilisateurs, revenus, etc.)
-- [ ] **Chart 1 :** [Type, ex: Pie Chart]
-- [ ] **Chart 2 :** [Type, ex: Bar Chart]
-- [ ] **Chart 3 :** [Type]
-- [ ] **Chart 4 :** [Type]
-- [ ] **Chart 5 :** [Type]
+- [ ] **KPIs :**
+  - Nombre total de livres
+  - Livres disponibles
+  - Emprunts en cours
+  - Nombre d’adhérents
+  - Livres en retard
+- [ ] **Chart 1 :** Bar Chart – Livres par catégorie
+- [ ] **Chart 2 :** Pie Chart – Livres disponibles vs empruntés
+- [ ] **Chart 3 :** Line Chart – Évolution des emprunts
+- [ ] **Chart 4 :** Doughnut Chart – Répartition des adhérents
+- [ ] **Chart 5 :** Scatter Chart – Activité des emprunts
 
 ### Technique & Bonus
 - [ ] **Export :** (PDF ou CSV)
@@ -59,9 +69,15 @@
 
 ## 🛠 Stack Technique
 
-*   **HTML5 / CSS3** (Framework CSS utilisé : Bootstrap / Tailwind / Autre ?)
-*   **JavaScript (ES6+)** (Vanilla JS obligatoire)
-*   **Bibliothèques JS utilisées :** (ex: Chart.js, Faker.js, jsPDF, Lodash...)
+- **HTML5 / CSS3**  
+  Framework CSS : Bootstrap 5
+- **JavaScript (ES6+)**  
+  Vanilla JS (sans React, Angular, etc.)
+- **Bibliothèques JavaScript utilisées :**
+  - Chart.js (graphiques)
+  - jsPDF (export PDF)
+  - Faker.js (données simulées)
+  - Lodash.js (filtres et tri)
 
 ### APIs Utilisées
 <!-- Listez les APIs externes ou précisez si vous utilisez des données mockées -->
@@ -77,7 +93,7 @@ Pour lancer le projet localement :
 
 1.  Cloner le repo :
     ```bash
-    git clone https://github.com/votre-user/votre-repo.git
+    git clone https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L
     ```
 2.  Ouvrir le dossier :
     ```bash
