@@ -1,4 +1,4 @@
-# Nom du Projet (ex: MyManager - Gestion Hospitalière)
+# Nom du Projet (Gestion BIBLIOTHEQUE)
 
 <!-- Mettez un court slogan ou une description en une phrase ici -->
 > Application Backoffice de Gestion de Bibliothque réalisée dans le cadre du module Dévelopement web.
