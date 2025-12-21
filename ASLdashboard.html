@@ -1,31 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard | Gestion de Bibliothèque A.S.L</title>
-    <link rel="stylesheet" href="ASLdashboard.css">
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+   <link rel="stylesheet" href="ASLdashboard.css">
 </head>
 <body>
 
-    <!-- Sidebar -->
-    <div>
-        <h2>Gestion de Bibliothèque A.S.L</h2>
-        <ul>
-    
-            <li>Livres</li>
-            <li>Auteurs</li>
-            <li>Adhérents</li>
-            <li>Emprunts</li>
-            <li>Catégories</li>
-        </ul>
-    </div>
+  <!-- SIDEBAR -->
+  <aside>
+    <h2>📚 Bibliothèque</h2>
+    <nav>
+      <ul>
+        <li><a href="ASLdashboard.html">Dashboard</a></li>
+        <li><a href="livres.html">Livres</a></li>
+        <li><a href="auteurs.html">Auteurs</a></li>
+        <li><a href="adherents.html">Adhérents</a></li>
+        <li><a href="emprunts.html">Emprunts</a></li>
+        <li><a href="categories.html">Catégories</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-    <!-- Contenu principal -->
-    <div>
-        <h1>Bienvenue dans notre Bibliothèque </h1>
-        <p>Choisissez depuis le menu.</p>
-    </div>
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HEADER -->
+    <header>
+      <h1>Dashboard</h1>
+    </header>
+
+    <!-- KPI SECTION -->
+    <section>
+      <h2>Statistiques clés</h2>
+
+      <div>
+        <article>
+          <h3>Total Livres</h3>
+          <p>120</p>
+        </article>
+
+        <article>
+          <h3>Livres Disponibles</h3>
+          <p>80</p>
+        </article>
+
+        <article>
+          <h3>Emprunts en cours</h3>
+          <p>25</p>
+        </article>
+
+        <article>
+          <h3>Adhérents</h3>
+          <p>60</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section>
+      <h2>Graphiques</h2>
+
+      <div>
+        <figure>
+          <figcaption>Livres par catégorie</figcaption>
+          <canvas id="barChart"></canvas>
+        </figure>
+
+        <figure>
+          <figcaption>Disponibles vs Empruntés</figcaption>
+          <canvas id="pieChart"></canvas>
+        </figure>
+
+        <figure>
+          <figcaption>Évolution des emprunts</figcaption>
+          <canvas id="lineChart"></canvas>
+        </figure>
+
+        <figure>
+          <figcaption>Répartition des adhérents</figcaption>
+          <canvas id="doughnutChart"></canvas>
+        </figure>
+
+        <figure>
+          <figcaption>Activité des emprunts</figcaption>
+          <canvas id="scatterChart"></canvas>
+        </figure>
+      </div>
+    </section>
+
+  </main>
 
 </body>
 </html>
+
 
