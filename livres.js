@@ -1,4 +1,9 @@
-const livres = [
+if (localStorage.getItem("bibliothequeLogin") !== "true") {
+  window.location.href = "login.html";
+}
+
+ 
+ const livres = [
   { id: 1, titre: "1984", auteur: "George Orwell", categorie: "Roman", dispo: true },
   { id: 2, titre: "Sapiens", auteur: "Yuval Noah Harari", categorie: "Histoire", dispo: false },
   { id: 3, titre: "Clean Code", auteur: "Robert C. Martin", categorie: "Informatique", dispo: true }
