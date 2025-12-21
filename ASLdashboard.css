@@ -13,4 +13,226 @@
 
   --radius: 16px;
   --shadow: 0 10px 30px rgba(0,0,0,0.06);
+}/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+aside {
+  width: 230px;
+  background: linear-gradient(180deg, #6f42c1, #4b2aad);
+  color: #fff;
+  padding: 20px;
+}
+
+aside h2 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  margin-bottom: 12px;
+}
+
+aside ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+aside ul li a:hover,
+aside ul li a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+header input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 250px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* ===== FORM ===== */
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  grid-column: span 3;
+  width: 150px;
+  padding: 10px;
+  background-color: #6f42c1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #59339d;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #f1f3f9;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table th {
+  font-size: 14px;
+  color: #666;
+}
+
+table tbody tr {
+  background-color: #f8f9fd;
+  border-radius: 10px;
+}
+
+table tbody tr:not(:last-child) {
+  border-bottom: 10px solid transparent;
+}
+
+table td {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== STATUS ===== */
+td:nth-child(5) {
+  font-weight: bold;
+}
+
+td:nth-child(5):contains("Oui") {
+  color: green;
+}
+
+/* ===== ACTION BUTTONS ===== */
+table button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+table button:nth-child(1) {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+table button:nth-child(2) {
+  background-color: #ffc107;
+  color: #000;
+}
+
+table button:nth-child(3) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+table button:not(:last-child) {
+  margin-right: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
 }
