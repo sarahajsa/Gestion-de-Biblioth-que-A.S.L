@@ -35,7 +35,7 @@ function render(data) {
         </div>
         <div>
           <button class="btn-delete" onclick="alert('Supprimer ${l.titre}')">
-            🗑️
+            
           </button>
         </div>
       </div>
