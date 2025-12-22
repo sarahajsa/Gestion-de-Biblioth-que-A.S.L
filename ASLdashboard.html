@@ -1,97 +1,269 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard</title>
-   <link rel="stylesheet" href="ASLdashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyManager - Dashboard</title>
+
+    <!-- Police moderne (optionnel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Feuille de style spécifique au dashboard -->
+    <link rel="stylesheet" href="ASLdashboard.css">
 </head>
 <body>
+    <!-- Wrapper global -->
+    <div class="app-wrapper">
+        <!-- Sidebar verticale -->
+        <aside class="sidebar" aria-label="Navigation principale">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-mark"><img src="c:\Users\123\Downloads\dashboard.png" alt="dashboard-logo"></div>
+                <div class="sidebar-title">
+                    <span class="sidebar-app-name">MyManager</span>
+                    <span class="sidebar-app-subtitle">Bibliothèque</span>
+                </div>
+            </div>
 
-  <!-- SIDEBAR -->
-  <aside>
-    <h2> Bibliothèque</h2>
-    <nav>
-      <ul>
-        <li><a href="ASLdashboard.html">Dashboard</a></li>
-        <li><a href="livres.html">Livres</a></li>
-        <li><a href="auteurs.html">Auteurs</a></li>
-        <li><a href="adherents.html">Adhérents</a></li>
-        <li><a href="emprunts.html">Emprunts</a></li>
-        <li><a href="categories.html">Catégories</a></li>
-      </ul>
-    </nav>
-  </aside>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="ASLdashboard.html" class="nav-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="livres.html" class="nav-link">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-label">Livres</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="auteurss.html" class="nav-link">
+                            <span class="nav-icon">✍️</span>
+                            <span class="nav-label">Auteurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adherents.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-label">Adhérents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emprunts.html" class="nav-link">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-label">Emprunts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html" class="nav-link">
+                            <span class="nav-icon">🏷️</span>
+                            <span class="nav-label">Catégories</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-  <!-- MAIN CONTENT -->
-  <main>
+        <!-- Colonne principale -->
+        <div class="main-column">
+            <!-- Navbar supérieure -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
+                        ☰
+                    </button>
+                    <div class="topbar-logo">
+                        <div class="topbar-logo-mark"></div>
+                        <span class="topbar-logo-text">MyManager</span>
+                    </div>
+                </div>
 
-    <!-- HEADER -->
-    <header>
-      <h1>Dashboard</h1>
-    </header>
+                <div class="topbar-right">
+                    <div class="topbar-user">
+                        <div class="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <span class="topbar-username" id="topbarUsername">admin</span>
+                            <span class="topbar-role">Administrateur</span>
+                        </div>
+                    </div>
+                    <button class="topbar-logout" id="btnLogout" type="button">
+                        Déconnexion
+                    </button>
+                </div>
+            </header>
 
-    <!-- KPI SECTION -->
-    <section>
-      <h2>Statistiques clés</h2>
+            <!-- Contenu principal -->
+            <main class="dashboard-main">
+                <!-- En-tête du dashboard -->
+                <section class="dashboard-header">
+                    <div class="dashboard-title-block">
+                        <h1 class="dashboard-title">Bonjour, <span id="dashboardUserName">Admin</span></h1>
+                        <p class="dashboard-subtitle">
+                            Voici un aperçu de l’activité de votre bibliothèque aujourd’hui.
+                        </p>
+                    </div>
+                    <div class="dashboard-breadcrumb">
+                        <span class="breadcrumb-item">Accueil</span>
+                        <span class="breadcrumb-separator"> > </span>
+                        <span class="breadcrumb-item active">Dashboard</span>
+                    </div>
+                </section>
 
-      <div>
-        <article>
-          <h3>Total Livres</h3>
-          <p>120</p>
-        </article>
+                <!-- Section KPI -->
+                <section class="kpi-section" aria-label="Indicateurs clés">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Livres</span>
+                            <span class="kpi-icon">📚</span>
+                        </div>
+                        <div class="kpi-value" id="kpiTotalBooks">0</div>
+                        <div class="kpi-footer" id="kpiTotalBooksTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
 
-        <article>
-          <h3>Livres Disponibles</h3>
-          <p>80</p>
-        </article>
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Emprunts actifs</span>
+                            <span class="kpi-icon">📄</span>
+                        </div>
+                        <div class="kpi-value" id="kpiActiveLoans">0</div>
+                        <div class="kpi-footer" id="kpiActiveLoansTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
 
-        <article>
-          <h3>Emprunts en cours</h3>
-          <p>25</p>
-        </article>
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Adhérents</span>
+                            <span class="kpi-icon">👥</span>
+                        </div>
+                        <div class="kpi-value" id="kpiMembers">0</div>
+                        <div class="kpi-footer" id="kpiMembersTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
 
-        <article>
-          <h3>Adhérents</h3>
-          <p>60</p>
-        </article>
-      </div>
-    </section>
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Retards</span>
+                            <span class="kpi-icon">⏰</span>
+                        </div>
+                        <div class="kpi-value" id="kpiLateLoans">0</div>
+                        <div class="kpi-footer" id="kpiLateLoansTrend">
+                            -0% vs mois dernier
+                        </div>
+                    </div>
 
-    <!-- CHARTS -->
-    <section>
-      <h2>Graphiques</h2>
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Taux de disponibilité</span>
+                            <span class="kpi-icon">✅</span>
+                        </div>
+                        <div class="kpi-value" id="kpiAvailability">0%</div>
+                        <div class="kpi-footer" id="kpiAvailabilityTrend">
+                            Stable
+                        </div>
+                    </div>
+                </section>
 
-      <div>
-        <figure>
-          <figcaption>Livres par catégorie</figcaption>
-          <canvas id="barChart"></canvas>
-        </figure>
+                <!-- Section principale avec graphiques et contenu -->
+                <section class="dashboard-grid">
+                    <!-- Zone principale (type "lecteur") -->
+                    <article class="reading-panel">
+                        <header class="reading-header">
+                            <h2 class="reading-title">Sélection du jour</h2>
+                            <p class="reading-subtitle">
+                                Découvrez les ouvrages les plus populaires et organisez vos mises en avant.
+                            </p>
+                        </header>
 
-        <figure>
-          <figcaption>Disponibles vs Empruntés</figcaption>
-          <canvas id="pieChart"></canvas>
-        </figure>
+                        <div class="reading-highlight">
+                            <div class="reading-cover-placeholder">
+                                <!-- Une vraie image pourra être ajoutée en HTML plus tard -->
+                                <span class="reading-cover-text">Couverture</span>
+                            </div>
+                            <div class="reading-info">
+                                <h3 class="reading-book-title" id="featuredBookTitle">
+                                    Titre de livre en vedette
+                                </h3>
+                                <p class="reading-book-meta" id="featuredBookAuthor">
+                                    Auteur &bull; Catégorie
+                                </p>
+                                <p class="reading-book-description" id="featuredBookDescription">
+                                    Résumé du livre. Ce texte sera remplacé par une description plus détaillée
+                                    pour aider les bibliothécaires à choisir les mises en avant.
+                                </p>
+                                <button type="button" class="reading-cta" id="btnGoToBooks">
+                                    Gérer les livres
+                                </button>
+                            </div>
+                        </div>
 
-        <figure>
-          <figcaption>Évolution des emprunts</figcaption>
-          <canvas id="lineChart"></canvas>
-        </figure>
+                        <section class="reading-lists">
+                            <div class="reading-list-block">
+                                <h4 class="reading-list-title">Populaire en ce moment</h4>
+                                <ul class="reading-list" id="popularBooksList">
+                                    <!-- Éléments générés via dashboard.js -->
+                                </ul>
+                            </div>
+                            <div class="reading-list-block">
+                                <h4 class="reading-list-title">Nouvelles acquisitions</h4>
+                                <ul class="reading-list" id="newBooksList">
+                                    <!-- Éléments générés via dashboard.js -->
+                                </ul>
+                            </div>
+                        </section>
+                    </article>
 
-        <figure>
-          <figcaption>Répartition des adhérents</figcaption>
-          <canvas id="doughnutChart"></canvas>
-        </figure>
+                    <!-- Colonne droite : graphiques et activité -->
+                    <aside class="analytics-panel" aria-label="Statistiques et activité">
+                        <!-- Section Graphiques -->
+                        <section class="charts-section" aria-label="Graphiques du dashboard">
+                            <h2 class="charts-title">Statistiques</h2>
 
-        <figure>
-          <figcaption>Activité des emprunts</figcaption>
-          <canvas id="scatterChart"></canvas>
-        </figure>
-      </div>
-    </section>
+                            <div class="chart-card">
+                                <h3 class="chart-title">Livres par catégorie</h3>
+                                <canvas id="chartBooksByCategory"></canvas>
+                            </div>
 
-  </main>
+                            <div class="chart-card">
+                                <h3 class="chart-title">Emprunts par mois</h3>
+                                <canvas id="chartLoansByMonth"></canvas>
+                            </div>
 
+                            <div class="chart-card">
+                                <h3 class="chart-title">Nouveaux adhérents</h3>
+                                <canvas id="chartNewMembers"></canvas>
+                            </div>
+                        </section>
+
+                        <!-- Activité récente -->
+                        <section class="activity-section" aria-label="Activité récente">
+                            <h2 class="activity-title">Dernières activités</h2>
+                            <ul class="activity-list" id="recentActivityList">
+                                <!-- Éléments injectés via dashboard.js -->
+                            </ul>
+                        </section>
+                    </aside>
+                </section>
+
+                <!-- Footer -->
+                <footer class="dashboard-footer">
+                    <span>&copy; <span id="footerYear"></span> MyManager &mdash; Application de gestion de bibliothèque.</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bibliothèque de graphiques (Chart.js) utilisée dans dashboard.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Logique du dashboard (sidebar, KPI, graphiques, etc.) -->
+    <script src="ASLdashboard.js"></script>
 </body>
 </html>
-
-
