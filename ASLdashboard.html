@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyManager - Dashboard</title>
+    <title>MI BIBLIO - Dashboard</title>
 
     <!-- Police moderne (optionnel) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Feuille de style spécifique au dashboard -->
-    <link rel="stylesheet" href="ASLdashboard.css">
+    <!-- Feuille de style commune -->
+    <link rel="stylesheet" href="ASLstyle.css">
 </head>
 <body>
     <!-- Wrapper global -->
@@ -19,9 +19,9 @@
         <!-- Sidebar verticale -->
         <aside class="sidebar" aria-label="Navigation principale">
             <div class="sidebar-header">
-                <div class="sidebar-logo-mark"><img src="c:\Users\123\Downloads\dashboard.png" alt="dashboard-logo"></div>
+                <div class="sidebar-logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.737 4.732 21.268C4.263 20.799 4 20.163 4 19.5V4.5C4 3.837 4.263 3.201 4.732 2.732C5.201 2.263 5.837 2 6.5 2Z" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 <div class="sidebar-title">
-                    <span class="sidebar-app-name">MyManager</span>
+                    <span class="sidebar-app-name">MI BIBLIO</span>
                     <span class="sidebar-app-subtitle">Bibliothèque</span>
                 </div>
             </div>
@@ -30,37 +30,37 @@
                 <ul>
                     <li>
                         <a href="ASLdashboard.html" class="nav-link active">
-                            <span class="nav-icon">🏠</span>
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12H15V22" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="livres.html" class="nav-link">
-                            <span class="nav-icon">📖</span>
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.737 4.732 21.268C4.263 20.799 4 20.163 4 19.5V4.5C4 3.837 4.263 3.201 4.732 2.732C5.201 2.263 5.837 2 6.5 2Z" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Livres</span>
                         </a>
                     </li>
                     <li>
-                        <a href="auteurss.html" class="nav-link">
-                            <span class="nav-icon">✍️</span>
+                        <a href="auteurs.html" class="nav-link">
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5C18.8978 2.10218 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10218 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10218 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Auteurs</span>
                         </a>
                     </li>
                     <li>
                         <a href="adherents.html" class="nav-link">
-                            <span class="nav-icon">👤</span>
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Adhérents</span>
                         </a>
                     </li>
                     <li>
                         <a href="emprunts.html" class="nav-link">
-                            <span class="nav-icon">📄</span>
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Emprunts</span>
                         </a>
                     </li>
                     <li>
                         <a href="categories.html" class="nav-link">
-                            <span class="nav-icon">🏷️</span>
+                            <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.59 13.41L13.42 20.58C13.2343 20.766 13.0137 20.9135 12.7709 21.0141C12.5281 21.1148 12.2678 21.1666 12.005 21.1666C11.7422 21.1666 11.4819 21.1148 11.2391 21.0141C10.9963 20.9135 10.7757 20.766 10.59 20.58L2 12V2H12L20.59 10.59C20.96 10.9657 21.1714 11.4696 21.1714 12C21.1714 12.5304 20.96 13.0343 20.59 13.41Z" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7H7.01" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                             <span class="nav-label">Catégories</span>
                         </a>
                     </li>
@@ -74,11 +74,11 @@
             <header class="topbar">
                 <div class="topbar-left">
                     <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
-                        ☰
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 6H21" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                     <div class="topbar-logo">
                         <div class="topbar-logo-mark"></div>
-                        <span class="topbar-logo-text">MyManager</span>
+                        <span class="topbar-logo-text">MI BIBLIO</span>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                     </div>
                     <div class="dashboard-breadcrumb">
                         <span class="breadcrumb-item">Accueil</span>
-                        <span class="breadcrumb-separator"> > </span>
+                        <span class="breadcrumb-separator">›</span>
                         <span class="breadcrumb-item active">Dashboard</span>
                     </div>
                 </section>
@@ -118,7 +118,7 @@
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">Livres</span>
-                            <span class="kpi-icon">📚</span>
+                            <span class="kpi-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.737 4.732 21.268C4.263 20.799 4 20.163 4 19.5V4.5C4 3.837 4.263 3.201 4.732 2.732C5.201 2.263 5.837 2 6.5 2Z" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </div>
                         <div class="kpi-value" id="kpiTotalBooks">0</div>
                         <div class="kpi-footer" id="kpiTotalBooksTrend">
@@ -129,7 +129,7 @@
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">Emprunts actifs</span>
-                            <span class="kpi-icon">📄</span>
+                            <span class="kpi-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </div>
                         <div class="kpi-value" id="kpiActiveLoans">0</div>
                         <div class="kpi-footer" id="kpiActiveLoansTrend">
@@ -140,7 +140,7 @@
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">Adhérents</span>
-                            <span class="kpi-icon">👥</span>
+                            <span class="kpi-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </div>
                         <div class="kpi-value" id="kpiMembers">0</div>
                         <div class="kpi-footer" id="kpiMembersTrend">
@@ -148,11 +148,10 @@
                         </div>
                     </div>
 
-<<<<<<< HEAD
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">Retards</span>
-                            <span class="kpi-icon">⏰</span>
+                            <span class="kpi-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6V12L16 14" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </div>
                         <div class="kpi-value" id="kpiLateLoans">0</div>
                         <div class="kpi-footer" id="kpiLateLoansTrend">
@@ -163,7 +162,7 @@
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">Taux de disponibilité</span>
-                            <span class="kpi-icon">✅</span>
+                            <span class="kpi-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </div>
                         <div class="kpi-value" id="kpiAvailability">0%</div>
                         <div class="kpi-footer" id="kpiAvailabilityTrend">
@@ -255,7 +254,7 @@
 
                 <!-- Footer -->
                 <footer class="dashboard-footer">
-                    <span>&copy; <span id="footerYear"></span> MyManager &mdash; Application de gestion de bibliothèque.</span>
+                    <span>&copy; <span id="footerYear"></span> MI BIBLIO &mdash; Application de gestion de bibliothèque.</span>
                 </footer>
             </main>
         </div>
@@ -264,15 +263,7 @@
     <!-- Bibliothèque de graphiques (Chart.js) utilisée dans dashboard.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-    <!-- Logique du dashboard (sidebar, KPI, graphiques, etc.) -->
+    <!-- Logique du dashboard  -->
     <script src="ASLdashboard.js"></script>
 </body>
 </html>
-=======
-        <article>
-          <h3>Adhérents</h3>
-          <p>60</p>
-        </article>
-      </div>
-    </section>
->>>>>>> 11356a06f95bdec58fe9287f232799ccefa91162
