@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI BIBLIO - Livres</title>
+
+    <!-- Police moderne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="livres.css">
+</head>
+<body>
+    <!-- Wrapper global -->
+    <div class="app-wrapper">
+        <!-- Sidebar verticale -->
+        <aside class="sidebar" aria-label="Navigation principale">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-mark">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <div class="sidebar-title">
+                    <span class="sidebar-app-name">MI BIBLIO</span>
+                    <span class="sidebar-app-subtitle">Bibliothèque</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-home"></i></span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="livres.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-book"></i></span>
+                            <span class="nav-label">Livres</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="auteurs.html" class="nav-link active">
+                            <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
+                            <span class="nav-label">Auteurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adherents.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-users"></i></span>
+                            <span class="nav-label">Adhérents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emprunts.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-exchange-alt"></i></span>
+                            <span class="nav-label">Emprunts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-tags"></i></span>
+                            <span class="nav-label">Catégories</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Colonne principale -->
+        <div class="main-column">
+            <!-- MODIF: topbar harmonisé (début) -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="topbar-logo"><div class="topbar-logo-mark"></div><span class="topbar-logo-text">MI BIBLIO</span></div>
+                    <div class="current-time"><i class="far fa-clock"></i> <span id="currentTime"></span></div>
+                </div>
+                <div class="topbar-right">
+                    <div class="navbar-icon notification-icon"><i class="fas fa-bell"></i><span class="notification-badge">3</span></div>
+                    <div class="navbar-icon message-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="dropdown lang-dropdown"><div class="navbar-icon lang-toggle"><i class="fas fa-globe"></i></div><div class="dropdown-menu"><a href="#" class="lang-option" data-lang="fr">Français</a><a href="#" class="lang-option" data-lang="en">English</a><a href="#" class="lang-option" data-lang="ar">العربية</a></div></div>
+                    <div class="topbar-user"><div class="topbar-user-avatar">A</div><div class="topbar-user-info"><span class="topbar-username" id="topbarUsername">admin</span><span class="topbar-role">Administrateur</span></div></div>
+                    <button class="topbar-logout" id="btnLogout" type="button"><i class="fas fa-sign-out-alt"></i>Déconnexion</button>
+                </div>
+            </header>
+
+            <!-- Contenu principal -->
+            <main class="livres-main">
+                <!-- En-tête -->
+                <section class="livres-header">
+                    <div class="livres-title-block">
+                        <h1 class="livres-title">Gestion des Livres</h1>
+                        <p class="livres-subtitle">
+                            Gérez vos livres : créer, modifier, consulter et supprimer.
+                        </p>
+                    </div>
+                    <button class="btn-primary" id="btnAddLivre">
+                        <span>+</span> Ajouter un livre
+                    </button>
+                </section>
+
+                <!-- Barre de filtres et actions -->
+                <section class="filters-section">
+                    <div class="filters-left">
+                        <div class="filter-group">
+                            <label for="filterSearch">Recherche</label>
+                            <input type="text" id="filterSearch" placeholder="Titre, auteur, isbn..." class="filter-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterCategory">Catégorie</label>
+                            <select id="filterCategory" class="filter-select">
+                                <option value="">Toutes</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterStatus">Statut</label>
+                            <select id="filterStatus" class="filter-select">
+                                <option value="">Tous</option>
+                                <option value="disponible">Disponible</option>
+                                <option value="emprunte">Emprunté</option>
+                            </select>
+                        </div>
+                        <button class="btn-secondary" id="btnClearFilters">Effacer</button>
+                    </div>
+                    <div class="filters-right">
+                        <div class="filter-group">
+                            <label for="sortBy">Trier par</label>
+                            <select id="sortBy" class="filter-select">
+                                <option value="titre">Titre</option>
+                                <option value="auteur">Auteur</option>
+                                <option value="annee">Année</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sortOrder">Ordre</label>
+                            <select id="sortOrder" class="filter-select">
+                                <option value="asc">Croissant</option>
+                                <option value="desc">Décroissant</option>
+                            </select>
+                        </div>
+                        <button class="btn-export" id="btnExportCSV">
+                            📥 Exporter CSV
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Tableau des livres -->
+                <section class="table-section">
+                    <div class="table-container">
+                        <table class="livres-table" id="livresTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titre</th>
+                                    <th>Auteur</th>
+                                    <th>Catégorie</th>
+                                    <th>ISBN</th>
+                                    <th>Année</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="livresTableBody">
+                                <!-- Les données seront injectées via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-section">
+                        <div class="pagination-info">
+                            <span id="paginationInfo">Affichage de 0 à 0 sur 0 résultats</span>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="btn-pagination" id="btnPrevPage" disabled>← Précédent</button>
+                            <div class="pagination-numbers" id="paginationNumbers"></div>
+                            <button class="btn-pagination" id="btnNextPage">Suivant →</button>
+                        </div>
+                        <div class="pagination-size">
+                            <label for="pageSize">Par page:</label>
+                            <select id="pageSize" class="filter-select">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal pour créer/modifier un livre -->
+    <div class="modal" id="livreModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Ajouter un livre</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <form id="livreForm" class="modal-form">
+                <input type="hidden" id="livreId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="livreTitre">Titre *</label>
+                        <input type="text" id="livreTitre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="livreAuteur">Auteur</label>
+                        <input type="text" id="livreAuteur">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="livreCategorie">Catégorie</label>
+                        <select id="livreCategorie"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="livreISBN">ISBN</label>
+                        <input type="text" id="livreISBN">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="livreAnnee">Année</label>
+                        <input type="number" id="livreAnnee" min="1000" max="9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="livreStatut">Statut</label>
+                        <select id="livreStatut">
+                            <option value="disponible">Disponible</option>
+                            <option value="emprunte">Emprunté</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="btnCancelForm">Annuler</button>
+                    <button type="submit" class="btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmation de suppression -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Confirmer la suppression</h2>
+                <button class="modal-close" id="deleteModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+                <p class="delete-warning">Cette action est irréversible.</p>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" id="btnCancelDelete">Annuler</button>
+                <button type="button" class="btn-danger" id="btnConfirmDelete">Supprimer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="dashboard.js"></script>
+    <script src="livres.js"></script>
+</body>
+</html>

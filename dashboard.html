@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI BIBLIO - Dashboard</title>
+
+    <!-- Police moderne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome pour icônes professionnelles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Wrapper global -->
+    <div class="app-wrapper">
+        <!-- Sidebar verticale -->
+        <aside class="sidebar" aria-label="Navigation principale">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-mark">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <div class="sidebar-title">
+                    <span class="sidebar-app-name">MI BIBLIO</span>
+                    <span class="sidebar-app-subtitle">Bibliothèque</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-link active">
+                            <span class="nav-icon"><i class="fas fa-home"></i></span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="livres.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-book"></i></span>
+                            <span class="nav-label">Livres</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="auteurs.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
+                            <span class="nav-label">Auteurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adherents.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-users"></i></span>
+                            <span class="nav-label">Adhérents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emprunts.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-exchange-alt"></i></span>
+                            <span class="nav-label">Emprunts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html" class="nav-link">
+                            <span class="nav-icon"><i class="fas fa-tags"></i></span>
+                            <span class="nav-label">Catégories</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Colonne principale -->
+        <div class="main-column">
+            <!-- Navbar supérieure -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="topbar-logo">
+                        <div class="topbar-logo-mark"></div>
+                        <span class="topbar-logo-text">MI BIBLIO</span>
+                    </div>
+                    <div class="current-time">
+                        <i class="far fa-clock"></i> <span id="currentTime"></span>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="navbar-icon notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    
+                    <div class="navbar-icon message-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    
+                    <div class="dropdown lang-dropdown">
+                        <div class="navbar-icon lang-toggle">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="#" class="lang-option" data-lang="fr">Français</a>
+                            <a href="#" class="lang-option" data-lang="en">English</a>
+                            <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+
+                    <div class="topbar-user">
+                        <div class="topbar-user-avatar">A</div>
+                        <div class="topbar-user-info">
+                            <span class="topbar-username" id="topbarUsername">admin</span>
+                            <span class="topbar-role">Administrateur</span>
+                        </div>
+                    </div>
+                    
+                    <button class="topbar-logout" id="btnLogout" type="button">
+                        <i class="fas fa-sign-out-alt"></i>Déconnexion
+                    </button>
+                </div>
+            </header>
+
+            <!-- Contenu principal -->
+            <main class="dashboard-main">
+                <!-- En-tête du dashboard -->
+                <section class="dashboard-header">
+                    <div class="dashboard-title-block">
+                        <h1 class="dashboard-title">Bonjour, <span id="dashboardUserName">Admin</span></h1>
+                        <p class="dashboard-subtitle">
+                            Voici un aperçu de l'activité de votre bibliothèque aujourd'hui.
+                        </p>
+                    </div>
+                    <div class="dashboard-breadcrumb">
+                        <span class="breadcrumb-item">Accueil</span>
+                        <span class="breadcrumb-separator">›</span>
+                        <span class="breadcrumb-item active">Dashboard</span>
+                    </div>
+                </section>
+
+                <!-- Section KPI -->
+                <section class="kpi-section" aria-label="Indicateurs clés">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Livres</span>
+                            <span class="kpi-icon"><i class="fas fa-book"></i></span>
+                        </div>
+                        <div class="kpi-value" id="kpiTotalBooks">0</div>
+                        <div class="kpi-footer" id="kpiTotalBooksTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Emprunts actifs</span>
+                            <span class="kpi-icon"><i class="fas fa-exchange-alt"></i></span>
+                        </div>
+                        <div class="kpi-value" id="kpiActiveLoans">0</div>
+                        <div class="kpi-footer" id="kpiActiveLoansTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Adhérents</span>
+                            <span class="kpi-icon"><i class="fas fa-users"></i></span>
+                        </div>
+                        <div class="kpi-value" id="kpiMembers">0</div>
+                        <div class="kpi-footer" id="kpiMembersTrend">
+                            +0% vs mois dernier
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Retards</span>
+                            <span class="kpi-icon"><i class="fas fa-exclamation-triangle"></i></span>
+                        </div>
+                        <div class="kpi-value" id="kpiLateLoans">0</div>
+                        <div class="kpi-footer" id="kpiLateLoansTrend">
+                            -0% vs mois dernier
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-- Section principale -->
+                <section class="dashboard-grid">
+                    <!-- Section "Sélection du jour" supprimée -->
+
+                    <!-- Colonne droite -->
+                    <aside class="analytics-panel" aria-label="Statistiques et activité">
+                        <section class="charts-section" aria-label="Graphiques du dashboard">
+                            <h2 class="charts-title">Statistiques</h2>
+
+                            <div class="chart-card">
+                                <h3 class="chart-title">Livres par catégorie</h3>
+                                <canvas id="chartBooksByCategory"></canvas>
+                            </div>
+
+                            <div class="chart-card">
+                                <h3 class="chart-title">Disponibilité des livres</h3>
+                                <canvas id="chartAvailability"></canvas>
+                            </div>
+
+                            <div class="chart-card">
+                                <h3 class="chart-title">Livres par catégorie (barres)</h3>
+                                <canvas id="chartBooksByCategoryAlt"></canvas>
+                            </div>
+
+                            <div class="chart-card">
+                                <h3 class="chart-title">Emprunts par mois</h3>
+                                <canvas id="chartLoansByMonth"></canvas>
+                            </div>
+
+                            <div class="chart-card">
+                                <h3 class="chart-title">Nouveaux adhérents</h3>
+                                <canvas id="chartNewMembers"></canvas>
+                            </div>
+                        </section>
+
+                        <section class="activity-section" aria-label="Activité récente">
+                            <h2 class="activity-title">Dernières activités</h2>
+                            <ul class="activity-list" id="recentActivityList">
+                                <!-- Éléments injectés via JS -->
+                            </ul>
+                        </section>
+                    </aside>
+                </section>
+
+                <!-- Footer -->
+                <footer class="dashboard-footer">
+                    <span>&copy; <span id="footerYear"></span> MI BIBLIO — Application de gestion de bibliothèque.</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="dashboard.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI BIBLIO - Connexion</title>
+
+    <!-- Police moderne (optionnel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Feuille de style commune -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Fond en deux tons, inspiré d’une app de lecture moderne -->
+    <div class="login-page">
+        <!-- Bandeau latéral décoratif (peut être stylé dans login.css) -->
+        <aside class="login-hero" aria-hidden="true">
+            <div class="login-hero-inner">
+                <div class="login-logo-circle"></div>
+                <h1 class="login-hero-title">MI BIBLIO</h1>
+                <p class="login-hero-subtitle">
+                    Gérez votre bibliothèque, vos adhérents et vos emprunts avec une interface claire et moderne.
+                </p>
+            </div>
+        </aside>
+
+        <!-- Conteneur principal du formulaire -->
+        <main class="login-main" aria-label="Page de connexion">
+            <section class="login-card" aria-labelledby="login-title">
+                <header class="login-card-header">
+                    <h2 id="login-title">Connexion à l’espace administrateur</h2>
+                    <p class="login-card-subtitle">
+                        Veuillez vous identifier pour accéder au tableau de bord de gestion de la bibliothèque.
+                    </p>
+                </header>
+
+                <!-- Formulaire de connexion -->
+                <form id="loginForm" class="login-form" novalidate>
+                    <!-- Champ username -->
+                    <div class="form-group">
+                        <label for="username">Nom d’utilisateur</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Entrez votre nom d’utilisateur"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <!-- Champ password -->
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Entrez votre mot de passe"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <!-- Message d’erreur (géré par login.js) -->
+                    <p id="loginError" class="login-error" aria-live="polite"></p>
+
+                    <!-- Bouton de connexion -->
+                    <button type="submit" id="btnLogin" class="login-button">
+                        Se connecter
+                    </button>
+
+                    <!-- Informations sur les identifiants de test -->
+                    <p class="login-hint">
+                        Identifiants de démonstration : <strong>admin / admin</strong>
+                    </p>
+                </form>
+
+                <footer class="login-footer">
+                    <p>
+                        MI BIBLIO &mdash; Application de gestion de bibliothèque.
+                    </p>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script de gestion de la connexion (validation + redirection) -->
+    <script src="login.js"></script>
+</body>
+</html>
