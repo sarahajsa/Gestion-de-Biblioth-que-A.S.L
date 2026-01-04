@@ -97,8 +97,6 @@ button { font-family: inherit; cursor: pointer; }
 .topbar-logo-mark { width:26px; height:26px; border-radius:999px; background: radial-gradient(circle at 30% 20%, #bfdbfe, #6366f1); box-shadow: 0 8px 18px rgba(79,70,229,0.6); }
 .topbar-logo-text { font-size:.9rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
 
-.current-time { margin-left:20px; font-size:.9rem; color:#6b7280; display:flex; align-items:center; gap:.5rem; }
-
 .topbar-right { display:flex; align-items:center; gap:1rem; }
 
 .navbar-icon {
@@ -106,10 +104,6 @@ button { font-family: inherit; cursor: pointer; }
   display:flex; align-items:center; justify-content:center; color:#4b5563; transition: background-color .2s;
 }
 .navbar-icon:hover { background-color: rgba(0,0,0,0.05); }
-.notification-badge {
-  position:absolute; top:-2px; right:-2px; background:#ef4444; color:#fff; border-radius:50%;
-  width:18px; height:18px; font-size:.7rem; display:flex; align-items:center; justify-content:center; font-weight:600;
-}
 
 .dropdown { position:relative; }
 .dropdown-menu {
@@ -179,11 +173,6 @@ button { font-family: inherit; cursor: pointer; }
 .chart-title { margin:0 0 .3rem; font-size:.9rem; color:#4b5563; }
 .chart-card canvas { width:100%; max-height:190px; }
 
-.activity-section { background:#fff; border-radius:20px; padding:1rem 1.1rem; box-shadow:0 14px 30px rgba(15,23,42,.1); }
-.activity-title { margin:0 0 .5rem; font-size:.95rem; font-weight:600; }
-.activity-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.35rem; font-size:.84rem; }
-.activity-list li { display:flex; justify-content:space-between; gap:.5rem; padding:.35rem 0; border-bottom:1px dashed rgba(209,213,219,.9); }
-.activity-list li:last-child { border-bottom:none; }
 .dashboard-footer { margin-top:.4rem; font-size:.8rem; color:#9ca3af; }
 
 /* ---------------------------

@@ -6,7 +6,15 @@
 .emprunts-title { margin:0; font-size:1.35rem; font-weight:600; }
 .emprunts-subtitle { margin:0; color:var(--muted); font-size:.95rem; }
 
+.btn-primary { background: linear-gradient(135deg,var(--primary),#22c55e); color:#fff; border:none; padding:.5rem .9rem; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:.6rem; font-weight:600; }
+.btn-secondary { border:1px solid #e5e7eb; background:#fff; padding:.45rem .8rem; border-radius:999px; cursor:pointer; }
+.btn-export { background:#fff; border:1px solid #e5e7eb; padding:.45rem .75rem; border-radius:10px; cursor:pointer; }
+.btn-danger { background:#ef4444; color:#fff; border:none; padding:.4rem .8rem; border-radius:8px; cursor:pointer; }
+.btn-pagination { background:#fff; border:1px solid #e5e7eb; padding:.4rem .65rem; border-radius:6px; cursor:pointer; }
+
 .filters-section { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 1rem; background:var(--bg-card); border-radius:12px; box-shadow:0 12px 30px rgba(15,23,42,.06); }
+.filters-left { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+.filters-right { display:flex; gap:1rem; align-items:center; }
 .filter-group { display:flex; flex-direction:column; gap:.25rem; }
 .filter-input, .filter-select { padding:.45rem .6rem; border-radius:10px; border:1px solid #e5e7eb; background:#fff; }
 

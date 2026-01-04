@@ -1,5 +1,5 @@
 (function () {
-  // Header/topbar logic reintegrée (mise à jour de l'heure, langue, notifications, sidebar, auth)
+  // Header/topbar logic reintegrée (langue, sidebar, auth)
   document.addEventListener('DOMContentLoaded', function () {
     const topbar = document.querySelector('.topbar');
     if (!topbar) return;
@@ -18,23 +18,6 @@
     }
 
     function changeLanguage(lang) { console.log('Changement de langue vers:', lang); }
-
-    // Toaster non bloquant
-    function showToast(text) {
-      const t = document.createElement('div');
-      t.className = 'top-toast';
-      t.textContent = text;
-      document.body.appendChild(t);
-      t.style.cssText = 'position:fixed;top:1rem;right:1rem;background:#111;color:#fff;padding:.6rem 1rem;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.2);opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s';
-      requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'translateY(0)'; });
-      setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateY(-8px)'; setTimeout(() => t.remove(), 300); }, 3000);
-    }
-
-    const notificationIcon = document.querySelector('.notification-icon');
-    notificationIcon && notificationIcon.addEventListener('click', function () { const badge = this.querySelector('.notification-badge'); badge && (badge.style.display = 'none'); showToast('Vous avez 3 nouvelles notifications.'); });
-
-    const messageIcon = document.querySelector('.message-icon');
-    messageIcon && messageIcon.addEventListener('click', function () { showToast('Aucun nouveau message.'); });
 
     const logoutBtn = document.getElementById('btnLogout');
     logoutBtn && logoutBtn.addEventListener('click', function () { if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) { try { localStorage.removeItem('mymanager_isAuthenticated'); } catch (e) {} window.location.href = 'login.html'; } });
@@ -79,20 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const membersByMonth = [4, 6, 5, 8, 10, 12, 11, 14, 13, 15, 16, 18];
   const loansByMonth = [25, 32, 28, 30, 35, 40, 38, 42, 39, 45, 48, 50];
 
-  const recentActivities = [
-    { label: 'Nouveau livre ajouté : « La Horde du Contrevent »', time: 'Il y a 5 min' },
-    { label: 'Emprunt : « 1984 » par Martin Dupont', time: 'Il y a 22 min' },
-    { label: 'Retour : « Le Seigneur des Anneaux »', time: 'Il y a 1 h' },
-    { label: 'Nouvel adhérent inscrit : Sarah Martin', time: "Aujourd'hui" },
-    { label: 'Catégorie mise à jour : Science-fiction', time: 'Hier' }
-  ];
-
   // Sélection d'éléments DOM importants
   const kpiTotalBooksEl = document.getElementById('kpiTotalBooks');
   const kpiActiveLoansEl = document.getElementById('kpiActiveLoans');
   const kpiMembersEl = document.getElementById('kpiMembers');
   const kpiLateLoansEl = document.getElementById('kpiLateLoans');
-  const recentActivityListEl = document.getElementById('recentActivityList');
   const footerYearEl = document.getElementById('footerYear');
 
   const canvasBooksByCategory = document.getElementById('chartBooksByCategory');
@@ -120,22 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
   updates.forEach(u => u.el && (u.el.textContent = String(u.value)));
 
   footerYearEl && (footerYearEl.textContent = String(new Date().getFullYear()));
-
-  // Activité récente (fragment pour performances)
-  if (recentActivityListEl) {
-    const frag = document.createDocumentFragment();
-    recentActivities.forEach(a => {
-      const li = document.createElement('li');
-      const label = document.createElement('span');
-      label.textContent = a.label;
-      const time = document.createElement('span');
-      time.textContent = a.time;
-      time.style.color = '#9ca3af';
-      li.append(label, time);
-      frag.appendChild(li);
-    });
-    recentActivityListEl.appendChild(frag);
-  }
 
   // Initialisation des graphiques (lazy + non bloquant)
   function initCharts() {

@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="auteurs.html" class="nav-link active">
+                        <a href="auteurs.html" class="nav-link">
                             <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
                             <span class="nav-label">Auteurs</span>
                         </a>
@@ -58,7 +58,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="emprunts.html" class="nav-link">
+                        <a href="emprunts.html" class="nav-link active">
                             <span class="nav-icon"><i class="fas fa-exchange-alt"></i></span>
                             <span class="nav-label">Emprunts</span>
                         </a>
@@ -122,16 +122,32 @@
                         <h1 class="emprunts-title">Gestion des Emprunts</h1>
                         <p class="emprunts-subtitle">Suivez les emprunts et retours des livres.</p>
                     </div>
-                    <button class="btn-primary" id="btnAddEmprunt">+ Nouveau prêt</button>
+                    <button class="btn-primary" id="btnAddEmprunt">
+                        <span>+</span> Nouveau prêt
+                    </button>
                 </section>
 
                 <section class="filters-section">
                     <div class="filters-left">
-                        <div class="filter-group"><label for="filterSearch">Recherche</label><input id="filterSearch" class="filter-input" placeholder="Livre, adhérent..."></div>
-                        <div class="filter-group"><label for="filterStatus">Statut</label><select id="filterStatus" class="filter-select"><option value="">Tous</option><option value="en_cours">En cours</option><option value="rendu">Rendu</option></select></div>
+                        <div class="filter-group">
+                            <label for="filterSearch">Recherche</label>
+                            <input type="text" id="filterSearch" placeholder="Livre, adhérent..." class="filter-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterStatus">Statut</label>
+                            <select id="filterStatus" class="filter-select">
+                                <option value="">Tous</option>
+                                <option value="en_cours">En cours</option>
+                                <option value="rendu">Rendu</option>
+                            </select>
+                        </div>
                         <button class="btn-secondary" id="btnClearFilters">Effacer</button>
                     </div>
-                    <div class="filters-right"><button class="btn-export" id="btnExportCSV">📥 Exporter CSV</button></div>
+                    <div class="filters-right">
+                        <button class="btn-export" id="btnExportCSV">
+                            📥 Exporter CSV
+                        </button>
+                    </div>
                 </section>
 
                 <section class="table-section">
