@@ -14,6 +14,7 @@
 
 .filters-section { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 1rem; background:var(--bg-card); border-radius:12px; box-shadow:0 12px 30px rgba(15,23,42,.06); }
 .filter-group { display:flex; flex-direction:column; gap:.25rem; }
+.filters-left { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
 .filter-input, .filter-select { padding:.45rem .6rem; border-radius:10px; border:1px solid #e5e7eb; background:#fff; }
 
 .table-section { background:var(--bg-card); padding:1rem; border-radius:12px; box-shadow:0 12px 30px rgba(15,23,42,.06); }
@@ -24,10 +25,21 @@
 .actions-cell { display:flex; gap:.45rem; }
 .action-btn { background:#fff; border:1px solid #e5e7eb; padding:.35rem .6rem; border-radius:8px; cursor:pointer; }
 
-.pagination-section { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:.9rem; }
+.pagination-section { display:flex; align-items:center; gap:1rem; margin-top:.9rem; justify-content:center; flex-wrap:wrap; }
+.pagination-info { display:none; }
+.pagination-controls { display:flex; align-items:center; gap:.5rem; }
 
 .modal { display:none; position:fixed; inset:0; align-items:center; justify-content:center; background:rgba(8,10,15,.45); z-index:60; }
 .modal.is-open { display:flex; }
 .modal-content { background:#fff; border-radius:12px; padding:1rem; width:100%; max-width:760px; box-shadow:0 20px 50px rgba(15,23,42,.18); }
+
+/* Modal / form helpers (harmonisé) */
+.modal-small { max-width:520px; }
+.modal-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.6rem; }
+.modal-close { background:transparent; border:none; font-size:1.4rem; cursor:pointer; }
+.modal-form .form-row { display:flex; gap:1rem; }
+.form-group { display:flex; flex-direction:column; gap:.25rem; margin-bottom:.6rem; }
+.form-group input, .form-group select, .form-group textarea { padding:.5rem .65rem; border-radius:10px; border:1px solid #e5e7eb; }
+.modal-actions { display:flex; justify-content:flex-end; gap:.6rem; margin-top:.6rem; }
 
 @media (max-width: 900px) { .modal-content { margin:1rem; } }

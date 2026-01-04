@@ -1,109 +1,64 @@
-# Nom du Projet (Gestion BIBLIOTHEQUE)
+# MI BIBLIO — Backoffice de gestion de bibliothèque
 
-<!-- Mettez un court slogan ou une description en une phrase ici -->
-> Application Backoffice de Gestion de Bibliothque réalisée dans le cadre du module Dévelopement web.
+MI BIBLIO est une interface d'administration légère et responsive pour gérer une bibliothèque : livres, auteurs, adhérents, catégories et emprunts. L'application est réalisée en HTML/CSS/Vanilla JavaScript et fournie sous forme de pages statiques (front-end).
 
-## 🔗 Liens Importants
+## Pages principales
+- `dashboard.html` — Tableau de bord avec KPIs et graphiques
+- `livres.html` — Gestion CRUD des livres
+- `auteurs.html` — Gestion CRUD des auteurs
+- `adherents.html` — Gestion CRUD des adhérents
+- `categories.html` — Gestion CRUD des catégories
+- `emprunts.html` — Suivi des emprunts et retours
+- `login.html` — Page de connexion (maquette)
 
-<!-- REMPLACEZ LES LIENS CI-DESSOUS -->
-- **APPLICATION DÉPLOYÉE (Live Demo) :** [CLIQUEZ ICI POUR VOIR LE SITE]()
-- **Repository GitHub :** [Lien vers ce repo](https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L)
+## Fonctionnalités
+- Listes avec recherche, filtres et tri
+- Pagination et navigation par pages
+- Modals pour création / modification d'entités
+- Suppression avec confirmation
+- Export CSV pour les tableaux
 
----
+## Structure du projet
 
-## 👥 Membres de l'Équipe
+```
+├─ index.html (ou dashboard.html)
+├─ styles.css
+├─ dashboard.js
+├─ livres.html / livres.css / livres.js
+├─ auteurs.html / auteurs.css / auteurs.js
+├─ adherents.html / adherents.css / adherents.js
+├─ categories.html / categories.css / categories.js
+├─ emprunts.html / emprunts.css / emprunts.js
+└─ README.md
+```
 
-**Nom du Groupe :** [A.S.L
+## Stack technique
+- HTML5, CSS3 (responsive)
+- Vanilla JavaScript (ES6+)
+- Font Awesome (icônes)
 
-| Prénom & Nom     | Rôle / Tâches principales | Lien Github                                          |
-|------------------|---------------------------|------------------------------------------------------|
-| Sarah Ajdi       | (ex: Dashboard, ChartJS)  | [@sarahajsa](https://github.com/sarahajsa)           |
-| Safae Sadki      | (ex: CRUD Utilisateurs)   | [@safaesad](https://github.com/safaesad)             |     
-|Yousra Laghrabi   | (ex: CSS, Responsive)     | [@yousralaghrabi](https://github.com/yousralaghrabi) |
+## Lancer le projet en local
 
----
+1. Cloner le dépôt :
 
-## 📝 Thème Choisi
-<!-- Indiquez le thème choisi parmi la liste ou votre sujet personnalisé -->
-*   **Thème :** Gestion de Bibliothèque  
-*   **Description :** Application backoffice permettant de gérer une bibliothèque à travers plusieurs entités (livres, auteurs, adhérents, catégories et emprunts).  
-  L’application offre des fonctionnalités CRUD complètes, des tableaux avec recherche, filtres, tri, pagination et export, ainsi qu’un tableau de bord présentant des statistiques via des graphiques interactifs.
+```bash
+git clone https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L
+cd Gestion-de-Biblioth-que-A.S.L
+```
 
----
+2. Ouvrir les pages dans un navigateur. Pour un rafraîchissement automatique, installez l'extension Live Server et lancez-la depuis VS Code.
 
-## ✅ État d'Avancement (Checklist)
-<!-- Cochez les cases [x] pour les fonctionnalités terminées. Laissez [ ] pour ce qui n'est pas fait. -->
+## Personnalisation et données
+- Les exemples de données sont gérés en local via les fichiers JS (mock). Pour connecter une API, adaptez les appels dans les fichiers `*.js` correspondants.
 
-### Fonctionnalités Principales
-- [ ] **CRUD 1 :** Livres (Create, Read, Update, Delete)
-- [ ] **CRUD 2 :** Auteurs
-- [ ] **CRUD 3 :** Adhérents
-- [ ] **CRUD 4 :** Emprunts
-- [ ] **CRUD 5 :** Catégories
-- [ ] **Recherche et filtres dans les tableaux**
-- [ ] **Tri (Sorting)**
-- [ ] **Pagination**
-- [ ] **Export CSV**
-- [ ] **Page "See Details" avec export PDF**
-- [ ] **Suppression avec confirmation (popup)**
+## Contribution
+- Faites une branche, effectuez vos changements et ouvrez une pull request. Documentez les modifications dans le README.
 
-### Dashboard & Data
-- [ ] **KPIs :**
-  - Nombre total de livres
-  - Livres disponibles
-  - Emprunts en cours
-  - Nombre d’adhérents
-  - Livres en retard
-- [ ] **Chart 1 :** Bar Chart – Livres par catégorie
-- [ ] **Chart 2 :** Pie Chart – Livres disponibles vs empruntés
-- [ ] **Chart 3 :** Line Chart – Évolution des emprunts
-- [ ] **Chart 4 :** Doughnut Chart – Répartition des adhérents
-- [ ] **Chart 5 :** Scatter Chart – Activité des emprunts
-
-### Technique & Bonus
-- [ ] **Export :** (PDF ou CSV)
-- [ ] **Architecture :** Code organisé sans Framework (Vanilla JS)
-- [ ] **Design :** Interface Responsive (Mobile/Tablette)
+## Licence
+- À renseigner selon l'utilisation souhaitée.
 
 ---
 
-## 🛠 Stack Technique
-
-- **HTML5 / CSS3**  
-  Framework CSS : Bootstrap 5
-- **JavaScript (ES6+)**  
-  Vanilla JS (sans React, Angular, etc.)
-- **Bibliothèques JavaScript utilisées :**
-  - Chart.js (graphiques)
-  - jsPDF (export PDF)
-  - Faker.js (données simulées)
-  - Lodash.js (filtres et tri)
-
-### APIs Utilisées
-<!-- Listez les APIs externes ou précisez si vous utilisez des données mockées -->
-*   Source des données : [ex: JSONPlaceholder, Mockaroo, API locale...]
-    *   Endpoint 1 : `https://api.emple.com/users`
-    *   Endpoint 2 : ...
-
----
-
-## ⚙️ Installation Locale
-
-Pour lancer le projet localement :
-
-1.  Cloner le repo :
-    ```bash
-    git clone https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L
-    ```
-2.  Ouvrir le dossier :
-    ```bash
-    cd votre-dossier
-    ```
-3.  Lancer l'application :
-    *   Ouvrez simplement `index.html` dans votre navigateur.
-    *   OU utilisez Live Server (VS Code Extension).
-
----
-
-## 📸 Captures d'écran (Optionnel)
-<!-- Vous pouvez ajouter ici 1 ou 2 screenshots de votre interface -->
+Si vous souhaitez, je peux :
+- Ajouter un fichier `CHANGELOG.md`.
+- Préparer un script de build ou une mini-API mock (JSON) pour tester les échanges.

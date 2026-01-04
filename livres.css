@@ -28,8 +28,9 @@
 .actions-cell { display:flex; gap:.45rem; }
 .action-btn { background:#fff; border:1px solid #e5e7eb; padding:.35rem .6rem; border-radius:8px; cursor:pointer; }
 
-.pagination-section { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:.9rem; }
-.pagination-info { color:var(--muted); }
+.pagination-section { display:flex; align-items:center; gap:1rem; margin-top:.9rem; justify-content:center; flex-wrap:wrap; }
+.pagination-info { display:none; }
+.pagination-controls { display:flex; align-items:center; gap:.5rem; }
 .pagination-numbers { display:flex; gap:.4rem; align-items:center; }
 .pagination-numbers button { padding:.35rem .6rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; cursor:pointer; }
 

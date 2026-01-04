@@ -32,6 +32,24 @@
     function loadUsername() { try { const storedUsername = localStorage.getItem('mymanager_username') || 'admin'; topbarUsernameEl && (topbarUsernameEl.textContent = storedUsername); dashboardUserNameEl && (dashboardUserNameEl.textContent = storedUsername.charAt(0).toUpperCase() + storedUsername.slice(1)); } catch (e) {} }
     loadUsername();
 
+    // Active automatiquement le lien de navigation correspondant à la page courante
+    (function setActiveNavLink() {
+      try {
+        const path = window.location.pathname || window.location.href;
+        const currentFile = String(path).split('/').pop().toLowerCase();
+        const links = document.querySelectorAll('.sidebar-nav .nav-link');
+        links.forEach(link => {
+          const href = (link.getAttribute('href') || '').split('/').pop().toLowerCase();
+          if (!href) return;
+          if (href === currentFile || (currentFile === '' && href === 'dashboard.html')) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      } catch (e) { /* silent */ }
+    })();
+
     // checkAuth disabled by default
   });
 })();
