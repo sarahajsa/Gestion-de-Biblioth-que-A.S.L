@@ -1,7 +1,6 @@
 (function () {
-  // Logic for Auteurs page: list, search, sort, pagination, modals, export
   document.addEventListener('DOMContentLoaded', function () {
-    // Simulated data
+ 
     let auteurs = [
       { id: 1, nom: 'Camus', prenom: 'Albert', dateNaissance: '1913-11-07', nationalite: 'Française', livres: 12, bio: 'Écrivain français.', site: '' },
       { id: 2, nom: 'Orwell', prenom: 'George', dateNaissance: '1903-06-25', nationalite: 'Anglaise', livres: 9, bio: 'Auteur de 1984.', site: '' },
@@ -10,7 +9,7 @@
       { id: 5, nom: 'Damasio', prenom: 'Alain', dateNaissance: '1969-01-01', nationalite: 'Française', livres: 5, bio: 'La Horde du Contrevent.', site: '' }
     ];
 
-    // State
+   
     let state = { page: 1, pageSize: 10, filter: '', nationalite: '', dateNaissance: '', sortBy: 'nom', sortOrder: 'asc' };
 
     // Elements

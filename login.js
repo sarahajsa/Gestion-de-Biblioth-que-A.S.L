@@ -1,6 +1,3 @@
-// ============================================================================
-// MI BIBLIO - Logique de la page de connexion (améliorations UX)
-// ============================================================================
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('loginForm');

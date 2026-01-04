@@ -1,12 +1,12 @@
 (function () {
-  // Header/topbar logic reintegrée (langue, sidebar, auth)
+  // Header
   document.addEventListener('DOMContentLoaded', function () {
     const topbar = document.querySelector('.topbar');
     if (!topbar) return;
 
     
 
-    // Lang dropdown
+    // Langue
     const langDropdown = document.querySelector('.lang-dropdown');
     if (langDropdown) {
       const toggle = langDropdown.querySelector('.lang-toggle');
@@ -54,9 +54,9 @@
   });
 })();
 
-// ============================================================================
-// MI BIBLIO - Logique du Dashboard
-// ============================================================================
+ 
+// Logique du Dashboard
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Vérifier que l'on est bien sur le dashboard

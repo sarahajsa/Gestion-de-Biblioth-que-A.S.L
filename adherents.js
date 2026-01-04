@@ -1,6 +1,6 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    // Simulated data for adhérents
+    
     let adherents = [
       { id: 1, nom: 'Dupont', prenom: 'Martin', email: 'm.dupont@example.com', telephone: '0601020304', adresse: '12 rue A', ville: 'Paris', codePostal: '75001', dateInscription: '2023-05-12', statut: 'actif', notes: '' },
       { id: 2, nom: 'Martin', prenom: 'Sophie', email: 's.martin@example.com', telephone: '0602030405', adresse: '4 avenue B', ville: 'Lyon', codePostal: '69001', dateInscription: '2022-11-02', statut: 'inactif', notes: '' },
