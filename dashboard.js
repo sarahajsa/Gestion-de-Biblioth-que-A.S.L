@@ -4,33 +4,7 @@
     const topbar = document.querySelector('.topbar');
     if (!topbar) return;
 
-    const currentTimeEl = document.getElementById('currentTime');
-    let currentDay = null;
-
-    function updateTime() {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const day = now.getDate();
-
-      if (currentDay !== day) {
-        currentDay = day;
-        const dateString = now.toLocaleDateString('fr-FR', {
-          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-        });
-        if (currentTimeEl) currentTimeEl.textContent = `${dateString} ${timeString}`;
-      } else if (currentTimeEl) {
-        const parts = currentTimeEl.textContent.split(' ');
-        if (parts.length) {
-          parts[parts.length - 1] = timeString;
-          currentTimeEl.textContent = parts.join(' ');
-        } else {
-          currentTimeEl.textContent = timeString;
-        }
-      }
-    }
-
-    updateTime();
-    setInterval(updateTime, 1000);
+    
 
     // Lang dropdown
     const langDropdown = document.querySelector('.lang-dropdown');

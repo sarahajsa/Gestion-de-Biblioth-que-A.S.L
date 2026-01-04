@@ -76,24 +76,47 @@
 
         <!-- Colonne principale -->
         <div class="main-column">
-            <!-- MODIF: topbar harmonisé (début) -->
+             <!-- Navbar supérieure -->
             <header class="topbar">
-                <div class="topbar-left">
-                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="topbar-logo"><div class="topbar-logo-mark"></div><span class="topbar-logo-text">MI BIBLIO</span></div>
-                    <div class="current-time"><i class="far fa-clock"></i> <span id="currentTime"></span></div>
-                </div>
-                <div class="topbar-right">
-                    <div class="navbar-icon notification-icon"><i class="fas fa-bell"></i><span class="notification-badge">3</span></div>
-                    <div class="navbar-icon message-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="dropdown lang-dropdown"><div class="navbar-icon lang-toggle"><i class="fas fa-globe"></i></div><div class="dropdown-menu"><a href="#" class="lang-option" data-lang="fr">Français</a><a href="#" class="lang-option" data-lang="en">English</a><a href="#" class="lang-option" data-lang="ar">العربية</a></div></div>
-                    <div class="topbar-user"><div class="topbar-user-avatar">A</div><div class="topbar-user-info"><span class="topbar-username" id="topbarUsername">admin</span><span class="topbar-role">Administrateur</span></div></div>
-                    <button class="topbar-logout" id="btnLogout" type="button"><i class="fas fa-sign-out-alt"></i>Déconnexion</button>
-                </div>
+               <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir ou fermer le menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="topbar-logo">
+            <div class="topbar-logo-mark"></div>
+            <span class="topbar-logo-text">MI BIBLIO</span>
+        </div>
+    </div>
+
+    <!-- langue + admin + déconnexion -->
+    <div class="topbar-right">
+        <div class="dropdown lang-dropdown">
+            <div class="navbar-icon lang-toggle">
+                <i class="fas fa-globe"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="#" class="lang-option" data-lang="fr">Français</a>
+                <a href="#" class="lang-option" data-lang="en">English</a>
+                <a href="#" class="lang-option" data-lang="ar">العربية</a>
+            </div>
+        </div>
+
+        <div class="topbar-user">
+            <div class="topbar-user-avatar">A</div>
+            <div class="topbar-user-info">
+                <span class="topbar-username" id="topbarUsername">admin</span>
+                <span class="topbar-role">Administrateur</span>
+            </div>
+        </div>
+
+        <button class="topbar-logout" id="btnLogout" type="button">
+            <i class="fas fa-sign-out-alt"></i> Déconnexion
+        </button>
+    </div>
+
             </header>
-            <!-- MODIF: topbar harmonisé (fin) -->
+      
 
             <!-- Contenu principal -->
             <main class="adherents-main">
