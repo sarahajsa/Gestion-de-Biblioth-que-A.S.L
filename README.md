@@ -6,7 +6,7 @@
 ## 🔗 Liens Importants
 
 <!-- REMPLACEZ LES LIENS CI-DESSOUS -->
-- **APPLICATION DÉPLOYÉE (Live Demo) :** [CLIQUEZ ICI POUR VOIR LE SITE]()
+- **APPLICATION DÉPLOYÉE (Live Demo) :** https://sarahajsa.github.io/Gestion-de-Biblioth-que-A.S.L/
 - **Repository GitHub :** [Lien vers ce repo](https://github.com/sarahajsa/Gestion-de-Biblioth-que-A.S.L)
 
 ---
